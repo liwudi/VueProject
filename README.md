@@ -27,4 +27,21 @@ npm run e2e
 npm test
 ```
 
+
+vue-router文档
+https://router.vuejs.org/zh-cn/ 
+
+
+ElementUi
+http://element-cn.eleme.io/#/zh-CN 
+
+
+axiox中文使用文档
+https://www.kancloud.cn/yunye/axios/234845 
+
+
+moment中文文档
+http://momentjs.cn/docs/ 
+
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
