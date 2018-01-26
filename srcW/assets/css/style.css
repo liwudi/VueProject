@@ -1,0 +1,177 @@
+@import url(base.css);
+#app,
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html {
+  font-size: 62.5%;
+}
+#app .main {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+#app .main .MainImages {
+  width: 100%;
+  height: 4.3rem;
+  background: none;
+  background: url(../images/1.jpg) no-repeat;
+  background-size: 100%;
+}
+#app .main .MainImages a {
+  display: block;
+  color: #fff;
+  padding-left: 0.18rem;
+  padding-top: 0.18rem;
+  text-decoration: none;
+  font-size: 0.3rem;
+}
+#app .main .MainComponent {
+  width: 100%;
+  height: 1.09rem;
+  background: #f3f3f3;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+}
+#app .main .MainComponent a {
+  display: block;
+  -webkit-box-flex: 1;
+  text-align: center;
+  line-height: 1.09rem;
+  color: #777777;
+  font-weight: bold;
+  font-size: 0.3rem;
+  text-decoration: none;
+}
+#app .main .warpper {
+  padding: 0.4rem 0.66rem;
+}
+#app .main .warpper .MainLogin .form .FormTel {
+  padding-top: 0.4rem;
+  border-bottom: 0.01rem solid #ccc;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-bottom: 0.3rem;
+}
+#app .main .warpper .MainLogin .form .FormTel span {
+  display: block;
+  width: 0.33rem;
+  height: 0.53rem;
+  background: none;
+  color: #ccc;
+}
+#app .main .warpper .MainLogin .form .FormTel input {
+  margin-left: 1.85rem;
+  font-size: 0.3rem;
+}
+#app .main .warpper .MainLogin p {
+  margin-top: 0.69rem;
+  text-align: center;
+  color: #bbbbbb;
+  font-size: 0.3rem;
+}
+#app .main .warpper .MainRegistered .form .FormTel {
+  padding-top: 0.4rem;
+  border-bottom: 0.01rem solid #ccc;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  padding-bottom: 0.3rem;
+}
+#app .main .warpper .MainRegistered .form .FormTel span {
+  display: block;
+  width: 0.33rem;
+  height: 0.53rem;
+  background: none;
+  color: #ccc;
+}
+#app .main .warpper .MainRegistered .form .FormTel input {
+  font-size: 0.3rem;
+  margin-left: 0.4rem;
+}
+#app .main .warpper .MainRegistered .form .FormTel .video {
+  width: 1.6rem;
+  height: 0.54rem;
+  background: none;
+  border: 0.01rem solid #ccc;
+  border-radius: 0.1rem;
+  text-align: center;
+  line-height: 0.54rem;
+  font-size: 0.25rem;
+  color: #cdcdcd;
+}
+#app .main button {
+  width: 100%;
+  height: 1.02rem;
+  background: #ca3232;
+  margin-top: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 0.4rem;
+}
+#app .ForgetPassword {
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+#app .ForgetPassword .ForgetHeader {
+  width: 100%;
+  height: 0.9rem;
+  background: #ca3232;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  line-height: 0.9rem;
+}
+#app .ForgetPassword .ForgetHeader a {
+  display: block;
+  padding-left: 0.28rem;
+  color: #fff;
+}
+#app .ForgetPassword .ForgetHeader p {
+  -webkit-box-flex: 1;
+  text-align: center;
+  padding-right: 0.5rem;
+  color: #FFF;
+  font-size: 0.4rem;
+}
+#app .ForgetPassword .ForgetContent {
+  padding: 1.44rem 0.46rem;
+  text-align: center;
+}
+#app .ForgetPassword .ForgetContent .form {
+  border-bottom: 0.01rem solid #ccc;
+  padding-bottom: 0.3rem;
+}
+#app .ForgetPassword .ForgetContent .form p {
+  margin-bottom: 0.7rem;
+  font-size: 0.4rem;
+}
+#app .ForgetPassword .ForgetContent .form input {
+  text-align: center;
+  font-weight: bold;
+}
+#app .ForgetPassword .ForgetContent button {
+  width: 100%;
+  height: 0.9rem;
+  background: #ca3232;
+  margin-top: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 0.38rem;
+}
+#app .ForgetPassword .ForgetContent span {
+  display: block;
+  color: #ca3232;
+  margin-top: 0.54rem;
+}
+#app .ForgetPassword .ForgetContent .buttonKong {
+  background: #FFF;
+  color: #ca3232;
+  border: 0.01rem solid #ca3232;
+}

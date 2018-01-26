@@ -10,16 +10,26 @@
     <div class="container">
       <div class="wrapper center" v-show="isLogin">
         <div class="inputBox">
+          <InputComponent
+            placeholder="请输入手机号"
+            v-on:change="getMyPhone"
+          />
+          <InputComponent
+            placeholder="请输入密码"
+          />
           <div class="inputContainer">
             <img class="icon" src="../../assets/logo.png" alt="">
-            <input placeholder="请输入手机号" type="text" />
+            <input v-model="userName" placeholder="请输入手机号" type="text" />
           </div>
           <div class="inputContainer">
             <img class="icon" src="../../assets/logo.png" alt="">
-            <input placeholder="请输入密码" type="text" />
+            <input
+              v-model="passWord"
+              placeholder="请输入密码"
+              type="text" />
           </div>
           <div class="center">
-            <div class="btn">登录</div>
+            <div @click="loginEvent" class="btn">登录</div>
           </div>
           <div class="center">
             <router-link to="/changePassword">忘记密码</router-link>
@@ -34,27 +44,42 @@
 <script>
   import axios from 'axios'
   import { getList } from '../../services/AppService'
+  import InputComponent from '../../components/inputComponent'
+
   export default {
     data: function () {
       return {
-        isLogin: true
+        isLogin: true,
+        userName:'15910590943',
+        passWord:'123456'
       }
     },
+    components: { InputComponent },
+
     created: function () {
       getList().then(function (value) {
         console.log(value)
       });
-
-      axios.post('http://114.55.249.153:8028/login/LoginByName', {
-        username: 'Fred',
-        password: 'Flintstone'
-      })
-        .then(function (response) {
-          console.log(response);
+    },
+    methods: {
+      getMyPhone: function (data) {
+        console.log('得到数据',data);
+      },
+      loginEvent:function () {
+        var userName = this.userName;
+        var passWord = this.passWord;
+        axios.post('http://114.55.249.153:8028/login/LoginByPhone', {
+          phone: userName,
+          password: passWord
         })
-        .catch(function (error) {
-          console.log(error);
-        });
+          .then(function (response) {
+            console.log('login',response);
+            this.$router.replace('/')
+          }.bind(this))
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
     }
   }
 </script>
