@@ -1,10 +1,10 @@
 <template>
   <div class="wrapper flexBox flexCol">
-    <div class="flex1">
+    <div class="flex1 autoBox">
       <router-view></router-view>
     </div>
     <div class="navTab flexBox">
-      <router-link class="flex1 center" to="">去购物</router-link>
+      <router-link class="flex1 center" to="goShoping">去购物</router-link>
       <router-link class="flex1 center" to="shopingCar">购物车</router-link>
       <router-link class="flex1 center" to="myShop">我的店铺</router-link>
       <router-link class="flex1 center" to="userCenter">用户中心</router-link>

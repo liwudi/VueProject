@@ -22,7 +22,7 @@ const routes = [
     component: Main,
     children: [
       { path: '/',component: GoShoping },
-      // { path: 'goShoping',component: GoShoping },
+      { path: '/goShoping',component: GoShoping },
       { path: '/shopingCar',component: ShopingCar },
       { path: '/myShop',component: MyShop },
       { path: '/userCenter',component: UserCenter }

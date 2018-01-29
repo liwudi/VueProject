@@ -23,10 +23,22 @@ html,body,p,ul,li{
 .flex1{
   flex: 1;
 }
+.flex2{
+  flex: 2;
+}
+.flex3{
+  flex: 3;
+}
 .center{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.flexColBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .autoBox{
