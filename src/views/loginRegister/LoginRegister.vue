@@ -117,6 +117,9 @@
           this.isShowPsd = true;
         }
       },
+      registergetMyPhone: function () {
+        
+      },
       loginEvent:function () {
         var userName = this.userName;
         var passWord = this.passWord;

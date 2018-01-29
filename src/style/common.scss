@@ -29,7 +29,14 @@ html,body,p,ul,li{
   justify-content: center;
 }
 
+.autoBox{
+  overflow: auto;
+}
 
+.initInput{
+  outline: none;
+  border: none;
+}
 .modelPadding{
   padding: 60px 20px;
   box-sizing: border-box;
