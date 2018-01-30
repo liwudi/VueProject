@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="goShop_swiper_box">
-
+      <img v-bind:src="src" alt="">
     </div>
 
 
@@ -56,8 +56,36 @@
 
 <script>
   export default {
+    mounted: function () {
+      //这里that记录的是这个vue组件的this。
+      var that = this;
+      var obj = new Swiper();
+      obj.init();
+      function Swiper() {
+        //new Swiper之后，这个函数中的this，整体上都属于实例化对象，而不属于组件。
+        this.index = 0;
+        this.init = function () {
+          //这里的_this是把Swiper的实例化对象的this给记录下来。
+          var _this = this;
+
+          setInterval(function () {
+            that.src = that.imgList[_this.index];
+            _this.index++;
+            if(_this.index >= 3) {
+              _this.index = 0;
+            }
+          },1000)
+        }
+      }
+    },
     data: function () {
       return {
+        src:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4130523934,2683922624&fm=27&gp=0.jpg',
+        imgList: [
+          'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4130523934,2683922624&fm=27&gp=0.jpg',
+          'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1026878786,2736392430&fm=27&gp=0.jpg',
+          'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1109518445,3385503542&fm=27&gp=0.jpg'
+        ],
         typeList: [
           {
             typeIcon:'../../../assets/logo.png',
