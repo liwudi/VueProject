@@ -12,6 +12,8 @@
         右图标
       </div>
     </div>
+
+    <!--轮播图-->
     <div class="goShop_swiper_box">
       <img class="wrapper" v-bind:src="src" alt="">
     </div>
@@ -68,7 +70,6 @@
         this.init = function () {
           //这里的_this是把Swiper的实例化对象的this给记录下来。
           var _this = this;
-
           setInterval(function () {
             that.src = that.imgList[_this.index];
             _this.index++;
@@ -117,14 +118,43 @@
       }
     },
     created: function () {
-      axios.get('http://114.55.249.153:8028/goods/list',{
-        params:{
-          page: 1,
-          limit: 10
+      this.getData();
+    },
+    methods: {
+      /*
+       * 用来获取首页数据
+       */
+      getData: function () {
+        var _this = this;
+        axios.get('http://114.55.249.153:8028/goods/list',{
+          params:{
+            page: 1,
+            limit: 10
+          }
+        }).then(function (value) {
+          console.log(value);
+          var bannerList = value.data.bannerList;
+          //处理bannerList
+          _this.dealBannerList(bannerList);
+        })
+      },
+      /**
+       * 处理bannerList数据
+       * @param bannerList
+       */
+      dealBannerList: function (bannerList) {
+        var _this = this
+        var imgList = [];
+        for(var i = 0; i < bannerList.length; i++){
+          var reg = /^http/;
+          if(reg.test(bannerList[i].imgpath)){
+            imgList.push(bannerList[i].imgpath)
+          } else {
+            imgList.push('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4130523934,2683922624&fm=27&gp=0.jpg')
+          }
         }
-      }).then(function (value) {
-        console.log(value)
-      })
+        this.imgList = imgList;
+      }
     }
   }
 </script>
