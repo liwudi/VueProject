@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="goShop_swiper_box">
-      <img v-bind:src="src" alt="">
+      <img class="wrapper" v-bind:src="src" alt="">
     </div>
 
 
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
     mounted: function () {
       //这里that记录的是这个vue组件的this。
@@ -114,6 +115,16 @@
           },
         ]
       }
+    },
+    created: function () {
+      axios.get('http://114.55.249.153:8028/goods/list',{
+        params:{
+          page: 1,
+          limit: 10
+        }
+      }).then(function (value) {
+        console.log(value)
+      })
     }
   }
 </script>

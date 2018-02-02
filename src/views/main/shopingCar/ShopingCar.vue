@@ -1,16 +1,18 @@
 <template>
   <div>
-    购物车
-    {{name}},{{num}}
+    <div>购物车</div>
+    <div>
+      内容
+    </div>
   </div>
 </template>
 
 <script>
+
   export default {
       data: function () {
         return {
-          name: this.$store.state.name,
-          num: this.$store.state.num
+
         }
       }
   }

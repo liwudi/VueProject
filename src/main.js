@@ -14,8 +14,25 @@ const store = new Vuex.Store({
     name: 'liwudi',
     num: 1
   },
+  getters: {
+    nameArray: function (state) {
+      return state.name.split('')
+    }
+  },
   mutations:{
+    CHANGE:function (state) {
+      setTimeout(function () {
+        state.num++
+      },1000)
+    }
+  },
+  actions: {
+    add: function (context) {
+      setTimeout(function () {
+        context.commit('CHANGE')
+      },1000)
 
+    }
   }
 })
 
