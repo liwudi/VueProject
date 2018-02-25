@@ -1,9 +1,11 @@
 <template>
   <div class="inputContainer">
-    <img class="icon" src="../assets/logo.png" alt="">
+    <img v-if='!type' class="icon" src="../assets/icons/user.png" alt="">
+    <img v-if='type' class="icon" src="../assets/icons/psd.png" alt="">
     <input
+    	class="margin-left"
       :placeholder="placeholder"
-      type="text"
+      :type="thisType"
       v-on:input="inputEvent"
       v-on:blur="blurEvent"
     />
@@ -14,10 +16,10 @@
   export default {
     data: function () {
       return {
-
+				thisType: this.type || 'text'
       }
     },
-    props: ['placeholder'],
+    props: ['placeholder','type'],
     methods: {
       inputEvent: function (e) {
         var value = e.target.value;
@@ -33,5 +35,7 @@
 </script>
 
 <style lang="scss" type="text/css" scoped>
-
+	.margin-left{
+		margin-left: 5px;
+	}
 </style>

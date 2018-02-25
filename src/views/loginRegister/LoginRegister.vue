@@ -4,8 +4,8 @@
       <img class="wrapper" src="../../assets/header.jpg" alt="">
     </div>
     <div class="loginOrRegister flexBox">
-      <div v-on:click="loginChoiceEvent" class="flex1 center">登录</div>
-      <div v-on:click="registerChoiceEvent" class="flex1 center">注册</div>
+      <div v-on:click="loginChoiceEvent" v-bind:class="{ active: isLogin }" class="flex1 center">登录</div>
+      <div v-on:click="registerChoiceEvent" v-bind:class="{ active: !isLogin }" class="flex1 center">注册</div>
     </div>
     <div class="container">
       <div class="wrapper center" v-show="isLogin">
@@ -23,6 +23,7 @@
             placeholder="请输入密码"
             v-on:change="getPassWord"
             v-on:blur="psdBlurEvent"
+            type='password'
           />
           <p v-show="isShowPsd" class="tips">请输入密码</p>
 
@@ -33,7 +34,7 @@
             />
           </div>
           <div class="center">
-            <router-link to="/changePassword">忘记密码</router-link>
+            <a v-on:click="changePsdEvent">忘记密码</a>
           </div>
         </div>
       </div>
@@ -42,20 +43,28 @@
           <InputComponent
             placeholder="请输入手机号"
             v-on:change="registergetMyPhone"
+            v-on:blur="testPhoneBlueEvent"
           />
+          <p v-show="isCorrectPhone" class="tips">手机号不符合规则</p>
           <InputComponent
             placeholder="请输入密码"
-            v-on:change="getPassWord"
+            v-on:change="registergetPassWord"
+            v-on:blur="testPsdBlueEvent"
+            type='password'
           />
+          <p v-show="isCorrectPsd" class="tips">密码不符合规则</p>
           <InputComponent
             placeholder="请重新输入密码"
-            v-on:change="getPassWord"
+            v-on:change="registergetConfirmPassWord"
+            v-on:blur="testConfirmPsdBlueEvent"
+            type='password'
           />
+          <p v-show="isCorrectConfirmPsd" class="tips">请确认两次密码输入一致</p>
           <div class="center">
             <div @click="loginEvent" class="btn">注册</div>
           </div>
           <div class="center">
-            <router-link to="/changePassword">忘记密码</router-link>
+            <a v-on:click="changePsdEvent">忘记密码</a>
           </div>
         </div>
       </div>
@@ -75,10 +84,18 @@
     data: function () {
       return {
         isLogin: true,
+        //登录界面数据控制
         userName:'',
         passWord:'',
         isShowPhone: false,
-        isShowPsd: false
+        isShowPsd: false,
+        
+        //注册界面数据控制
+        registerUserName:'',
+        registerPsd:'',
+        isCorrectPhone: false,
+        isCorrectPsd: false,
+        isCorrectConfirmPsd: false
       }
     },
     // 每个的引入的组件，都必须显式的申明在这里
@@ -118,18 +135,47 @@
           this.isShowPsd = true;
         }
       },
-      registergetMyPhone: function () {
-
+      registergetMyPhone: function (data) {
+				this.registerUserName = data;
       },
+      registergetPassWord: function (data) {
+				this.registerPsd = data;
+      },
+      registergetConfirmPassWord: function (data) {
+				
+      },
+      testPhoneBlueEvent: function(data){
+      	var reg = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+      	console.log('手机号',data);
+      	if(reg.test(data)){
+      		this.isCorrectPhone = false;
+      	} else {
+      		this.isCorrectPhone = true;
+      	}
+      },
+      testPsdBlueEvent: function(data){
+      	var reg = /^[a-zA-Z\d_]{6,10}$/;
+      	console.log('密码',data);
+      	if(reg.test(data)){
+      		this.isCorrectPsd = false;
+      	} else {
+      		this.isCorrectPsd = true;
+      	}
+      },
+      testConfirmPsdBlueEvent: function(data){
+      	if(data == this.registerPsd){
+      		this.isCorrectConfirmPsd = false;
+      	} else {
+      		this.isCorrectConfirmPsd = true;
+      	}
+      },
+      
       loginEvent:function () {
         var userName = this.userName;
         var passWord = this.passWord;
         console.log(userName,passWord);
         if(userName && passWord){
-          // axios.post('http://114.55.249.153:8028/login/LoginByPhone', {
-          //   phone: userName,
-          //   password: passWord
-          // })
+        	this.$router.replace('/')
           login(userName,passWord)
             .then(function (response) {
               console.log('login',response);
@@ -146,7 +192,11 @@
           this.passWord && (this.isShowPsd = false);
           !this.passWord && (this.isShowPsd = true);
         }
-
+      },
+      changePsdEvent: function(){
+      
+      	this.$router.push('/changePassword');
+      	//this.$router.replace('/changePassword')
       }
     }
   }
@@ -170,6 +220,9 @@
   }
   .container{
     flex: 1;
+  }
+  .active{
+  	color: #0000FF;
   }
 
 </style>

@@ -11,6 +11,8 @@ import UserCenter from '../views/main/userCenter/UserCenter'
 import LoginRegister from '../views/loginRegister/LoginRegister'
 import Start from '../views/startPage/StartPage'
 import ChangePassword from '../views/changePassword/ChangePassword'
+import SetPassWord from '../views/changePassword/setPassWord/SetPassWord'
+import GetCode from '../views/changePassword/getCode/GetCode'
 
 //other
 Vue.use(Router)
@@ -34,8 +36,14 @@ const routes = [
     path: '/start',
     component: Start
   },{
-    path: './changePassword',
+    path: '/changePassword',
     component: ChangePassword
+  },{
+    path: '/setpassword',
+    component: SetPassWord
+  },{
+    path: '/getcode',
+    component: GetCode
   },{
     path: '*',
     redirect: '/loginRegister'

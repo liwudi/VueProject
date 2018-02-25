@@ -44,12 +44,42 @@ html,body,p,ul,li{
 .autoBox{
   overflow: auto;
 }
-
+.text-center{
+    text-align: center;
+}
 .initInput{
   outline: none;
   border: none;
 }
+
 .modelPadding{
   padding: 60px 20px;
   box-sizing: border-box;
+}
+
+.bgred{
+    background: red;
+}
+.bgBlack{
+    background: black;
+}
+.colorWhite{
+    color: white;
+}
+.colorRed{
+    color: red;
+}
+.border{
+    border: 1px solid #CCCCCC;
+}
+.height150{
+    height: 150px;
+}
+.height200{
+    height: 200px;
+}
+
+
+.margin-top20{
+    margin-top: 20px;
 }
