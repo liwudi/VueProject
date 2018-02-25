@@ -65,7 +65,8 @@
 
 <script>
   import axios from 'axios'
-  import { getList } from '../../services/AppService'
+  import { getList } from '../../services/AppService';
+  import { login } from '../../services/homeService';
 
   //组件的引用
   import InputComponent from '../../components/inputComponent'
@@ -125,10 +126,11 @@
         var passWord = this.passWord;
         console.log(userName,passWord);
         if(userName && passWord){
-          axios.post('http://114.55.249.153:8028/login/LoginByPhone', {
-            phone: userName,
-            password: passWord
-          })
+          // axios.post('http://114.55.249.153:8028/login/LoginByPhone', {
+          //   phone: userName,
+          //   password: passWord
+          // })
+          login(userName,passWord)
             .then(function (response) {
               console.log('login',response);
               this.$router.replace('/')

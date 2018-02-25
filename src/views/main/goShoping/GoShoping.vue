@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper autoBox">
+    <!--顶部搜索栏-->
     <div class="goShop_input_box center">
       <div class="iconTitle center leftIcon">
         左图标
@@ -57,7 +58,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  import { goodslist } from '../../../services/homeService';
   export default {
     mounted: function () {
       //这里that记录的是这个vue组件的this。
@@ -126,17 +127,18 @@
        */
       getData: function () {
         var _this = this;
-        axios.get('http://114.55.249.153:8028/goods/list',{
-          params:{
-            page: 1,
-            limit: 10
-          }
-        }).then(function (value) {
+
+        goodslist().then(function (value) {
           console.log(value);
           var bannerList = value.data.bannerList;
           //处理bannerList
           _this.dealBannerList(bannerList);
+          //处理本周主打
+          _this.dealWeekCommand();
         })
+      },
+      dealWeekCommand: function () {
+
       },
       /**
        * 处理bannerList数据

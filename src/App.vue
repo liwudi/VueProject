@@ -15,7 +15,7 @@ export default {
     }
   },
   created: function () {
-    this.$router.replace('/')
+    this.$router.replace('/login')
   }
 }
 </script>
