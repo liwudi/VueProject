@@ -1,6 +1,11 @@
 <template>
 	<div class="topBanner center colorWhite bgred">
-		<img @click="backEvent" class="iconPosition" src="../assets/icons/back.png"/>
+		<img
+      v-if="!isShowArrow"
+      @click="backEvent"
+      class="iconPosition"
+      src="../assets/icons/back.png"
+    />
 		{{name}}
 	</div>
 </template>
@@ -12,7 +17,7 @@
 				name: this.title || '顶部导航栏'
 			}
 		},
-		props: ['title'],
+		props: ['title','isShowArrow'],
 		methods:{
 			backEvent: function(){
 				this.$router.back(-1);
