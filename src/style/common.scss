@@ -1,8 +1,6 @@
 @import "icon";
 @import "btn";
-
-
-
+@import "fontSize";
 #app,.wrapper,html,body{
   width: 100%;
   height: 100%;
@@ -34,6 +32,10 @@ html,body,p,ul,li{
   align-items: center;
   justify-content: center;
 }
+.colCenter{
+  display: flex;
+  align-items: center;
+}
 .flexColBox{
   display: flex;
   flex-direction: column;
@@ -56,12 +58,24 @@ html,body,p,ul,li{
   padding: 60px 20px;
   box-sizing: border-box;
 }
+.boxSizing{
+  box-sizing: border-box;
+}
 
 .bgred{
     background: red;
 }
+.bgGrey{
+    background: grey;
+}
+.bgNote{
+    background: #dddddd;
+}
 .bgBlack{
     background: black;
+}
+.bgWhite{
+    background: #fff;
 }
 .colorWhite{
     color: white;
@@ -69,8 +83,14 @@ html,body,p,ul,li{
 .colorRed{
     color: red;
 }
+.colorNote{
+  color: #999999;
+}
 .border{
     border: 1px solid #CCCCCC;
+}
+.height100{
+  height: 100px;
 }
 .height150{
     height: 150px;
@@ -82,4 +102,31 @@ html,body,p,ul,li{
 
 .margin-top20{
     margin-top: 20px;
+}
+.margin-left20{
+  margin-left: 20px;
+}
+.margin{
+  margin: 10px;
+}
+.margin5{
+  margin: 5px;
+}
+.padding{
+  padding: 10px;
+}
+.padding-left{
+  padding-left: 10px;
+}
+.padding-right{
+  padding-right: 10px;
+}
+.border-bottom{
+  border-bottom: 1px solid #CCCCCC;
+}
+
+
+.imgDefault{
+  width: 100%;
+  height: 100%;
 }
