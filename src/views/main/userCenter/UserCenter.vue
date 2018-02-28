@@ -1,6 +1,8 @@
 <template>
   <div>
     用户中心
+    {{$store.state.userName}}
+    {{$store.state.age}}
   </div>
 </template>
 
@@ -10,6 +12,9 @@
       return {
 
       }
+    },
+    computed: {
+
     },
     created: function () {
 

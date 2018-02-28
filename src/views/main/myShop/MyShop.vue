@@ -1,7 +1,10 @@
 <template>
   <div>
     我的店铺
-    {{getName}},{{getNum}}
+    {{$store.state.userName}}
+    {{$store.state.age}}
+    <button @click="setage">设定年龄</button>
+    <button @click="setactionage">异步设定年龄</button>
   </div>
 </template>
 
@@ -9,18 +12,18 @@
   export default {
     data: function () {
       return {
-        name: this.$store.state.name,
-        num: this.$store.state.num
+
       }
     },
-    computed: {
-      getName: function () {
-        return this.$store.state.name
+    methods: {
+      setage: function(){
+        console.log(this.$store.state);
+        this.$store.commit('setAge',28);
       },
-      getNum: function () {
-        return this.$store.state.num
+      setactionage: function(){
+        this.$store.dispatch('ageAction');
       }
-    },
+    }
   }
 </script>
 

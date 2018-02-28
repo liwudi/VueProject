@@ -38,6 +38,9 @@
         <div v-show="choiceList.length" class="all-price-container boxSizing padding-left colorRed colCenter">
           小计: ￥{{ allPrice }}
         </div>
+        <div>
+          账户余额：{{myacount}}
+        </div>
       </div>
 
       <div class="flexBox bg editContainer boxSizing">
@@ -50,6 +53,7 @@
           全选
         </div>
         <div class="bgGrey colorWhite center flex2">移至收藏夹</div>
+        <div @click="payEvent" class="bgred colorWhite center flex2">结账</div>
         <div @click="deleteEvent" class="bgred colorWhite center flex2">删除</div>
       </div>
 
@@ -127,6 +131,16 @@
           }
         }
         this.choiceList = arr;
+      },
+      payEvent: function(){
+        console.log('结账')
+        var pay = 0;
+        for(var i = 0; i < this.choiceList.length; i++){
+          if(this.choiceList[i].isChecked == true){
+            pay += this.choiceList[i].num * this.choiceList[i].price;
+          }
+        }
+        this.$store.commit('checkout', pay)
       }
     },
     computed: {
@@ -138,6 +152,9 @@
           }
         }
         return allprice
+      },
+      myacount: function () {
+        return this.$store.state.acount
       }
     }
   }
