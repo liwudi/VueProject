@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="all-price-container boxSizing padding-left colorRed colCenter">
+        <div v-show="choiceList.length" class="all-price-container boxSizing padding-left colorRed colCenter">
           小计: ￥{{ allPrice }}
         </div>
       </div>
@@ -50,7 +50,7 @@
           全选
         </div>
         <div class="bgGrey colorWhite center flex2">移至收藏夹</div>
-        <div class="bgred colorWhite center flex2">删除</div>
+        <div @click="deleteEvent" class="bgred colorWhite center flex2">删除</div>
       </div>
 
     </div>
@@ -114,6 +114,19 @@
         if(this.choiceList[index].num < this.choiceList[index].all){
           this.choiceList[index].num += 1;
         }
+      },
+      deleteEvent: function(){
+        // this.choiceList = this.choiceList.filter((item,index) => {
+        //   return (item.isChecked == false);
+        // });
+
+        var arr = []
+        for(var i = 0; i < this.choiceList.length; i++){
+          if(this.choiceList[i].isChecked == false){
+            arr.push(this.choiceList[i]);
+          }
+        }
+        this.choiceList = arr;
       }
     },
     computed: {
