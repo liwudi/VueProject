@@ -6,6 +6,7 @@
     <div class="flex1">
       <ComponentRightArrow
         v-for="(item,index) in showDataList"
+        :key="index"
         :title="item.name"
         :index = 'index'
         :clickEvent="goToEvent"

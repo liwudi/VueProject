@@ -8,7 +8,9 @@ import ShopingCar from '../views/main/shopingCar/ShopingCar'
 import MyShop from '../views/main/myShop/MyShop'
 import ShopName from '../views/main/myShop/shopName/ShopName'
 import ShopSet from '../views/main/myShop/shopSet/ShopSet';
-import UserCenter from '../views/main/userCenter/UserCenter'
+import UserCenter from '../views/main/userCenter/UserCenter';
+import MyOrder from '../views/main/userCenter/myOrder/MyOrder';
+import SetPage from '../views/main/userCenter/setPage/SetPage';
 
 import LoginRegister from '../views/loginRegister/LoginRegister'
 import Start from '../views/startPage/StartPage'
@@ -40,6 +42,12 @@ const routes = [
   }, {
     path: '/shopName',
     component: ShopName
+  },{
+    path: '/myOrder',
+    component: MyOrder
+  },{
+    path: '/setPage',
+    component: SetPage
   }
   ,{
     path: '/loginRegister',

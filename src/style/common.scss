@@ -11,7 +11,7 @@ html,body,p,ul,li{
   list-style: none;
 }
 
-
+//flex相关
 .flexBox{
   display: flex;
 }
@@ -61,7 +61,7 @@ html,body,p,ul,li{
 .boxSizing{
   box-sizing: border-box;
 }
-
+// 颜色
 .bgred{
     background: red;
 }
@@ -89,11 +89,21 @@ html,body,p,ul,li{
 .border{
     border: 1px solid #CCCCCC;
 }
+.border-right{
+  border-right: 1px solid #CCCCCC;
+}
+.border-left{
+  border-left: 1px solid #CCCCCC;
+}
 
-
+//宽高定制
 .height50{
   height: 50px;
 }
+.height70{
+  height: 70px;
+}
+
 .height100{
   height: 100px;
 }
@@ -104,7 +114,7 @@ html,body,p,ul,li{
     height: 200px;
 }
 
-
+// 边距
 .margin-top20{
     margin-top: 20px;
 }
@@ -120,11 +130,20 @@ html,body,p,ul,li{
 .padding{
   padding: 10px;
 }
+.padding5{
+  padding: 5px;
+}
 .padding-left{
   padding-left: 10px;
 }
 .padding-right{
   padding-right: 10px;
+}
+.padding-top{
+  padding-top: 10px;
+}
+.padding-bottom{
+  padding-bottom: 10px;
 }
 .border-bottom{
   border-bottom: 1px solid #CCCCCC;
@@ -134,4 +153,9 @@ html,body,p,ul,li{
 .imgDefault{
   width: 100%;
   height: 100%;
+}
+
+//font定制
+.font20{
+  font-size: 20px;
 }
