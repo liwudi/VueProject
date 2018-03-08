@@ -28,14 +28,9 @@
         </div>
       </div>
       <div class="flexList margin-top20">
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
-        <div class="flexItem"></div>
+
+        <ClassifyComponent :title="item.title" :key="index" v-for="(item,index) in array"/>
+
       </div>
     </div>
     <div v-if="!hasInfo" class="flex1">
@@ -46,10 +41,26 @@
 
 <script>
   import TopBanner from '../../../components/TopBanner';
+  import ClassifyComponent from '../../../components/classifyComponent';
   export default {
     data: function () {
       return {
-        hasInfo: this.$store.state.userInfo.myshop
+        hasInfo: this.$store.state.userInfo.myshop,
+        array: [{
+          title: '店铺订单'
+        },{
+          title: '货品管理'
+        },{
+          title: '分店信息'
+        },{
+          title: '我要推广'
+        },{
+          title: '红包奖励'
+        },{
+          title: '任务奖励'
+        },{
+          title: '使用帮助'
+        }]
       }
     },
     methods: {
@@ -58,7 +69,8 @@
       }
     },
     components:{
-      TopBanner
+      TopBanner,
+      ClassifyComponent
     },
   }
 </script>

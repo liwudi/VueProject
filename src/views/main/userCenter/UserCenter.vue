@@ -5,11 +5,13 @@
       :isShowArrow="true"
     ></TopBanner>
     <div class="flex1 bgNote">
-      <div class="flexBox height100">
-        <div class="left"></div>
-        <div class="right">
-          <div></div>
-          <div>注册会员</div>
+      <div class="flexBox height100 bgOrange border-top">
+        <div class="left center">
+          <img class="imgDefault" :src='src' alt="">
+        </div>
+        <div class="right flexBox flexCol">
+          <div class="colCenter flex1 colorWhite font20">mapbar_front</div>
+          <div class="flex1"><span class="register">注册会员</span></div>
         </div>
       </div>
       <ComponentRightArrow
@@ -48,7 +50,7 @@
   export default {
     data: function () {
       return {
-
+        src: this.$store.state.userInfo.userImage
       }
     },
     components:{
@@ -70,5 +72,20 @@
 </script>
 
 <style scoped>
-
+  .left{
+    width: 100px;
+    height: 100px;
+  }
+  .imgDefault{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .register{
+    background: red;
+    border-radius: 5px;
+    padding: 3px 5px;
+    color: #ffffff;
+    border: 1px solid #cccccc;
+  }
 </style>
