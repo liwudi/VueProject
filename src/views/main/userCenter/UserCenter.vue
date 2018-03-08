@@ -5,6 +5,13 @@
       :isShowArrow="true"
     ></TopBanner>
     <div class="flex1 bgNote">
+      <div class="flexBox height100">
+        <div class="left"></div>
+        <div class="right">
+          <div></div>
+          <div>注册会员</div>
+        </div>
+      </div>
       <ComponentRightArrow
         title="个人资料"
       />
