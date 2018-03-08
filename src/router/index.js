@@ -6,6 +6,8 @@ import Main from '../views/main/Main'
 import GoShoping from '../views/main/goShoping/GoShoping'
 import ShopingCar from '../views/main/shopingCar/ShopingCar'
 import MyShop from '../views/main/myShop/MyShop'
+import ShopName from '../views/main/myShop/shopName/ShopName'
+import ShopSet from '../views/main/myShop/shopSet/ShopSet';
 import UserCenter from '../views/main/userCenter/UserCenter'
 
 import LoginRegister from '../views/loginRegister/LoginRegister'
@@ -26,10 +28,20 @@ const routes = [
       { path: '/',component: GoShoping },
       { path: '/goShoping',component: GoShoping },
       { path: '/shopingCar',component: ShopingCar },
-      { path: '/myShop',component: MyShop },
+      {
+        path: '/myShop',
+        component: MyShop,
+      },
       { path: '/userCenter',component: UserCenter }
     ]
-  },{
+  }, {
+    path: '/shopSet',
+    component: ShopSet
+  }, {
+    path: '/shopName',
+    component: ShopName
+  }
+  ,{
     path: '/loginRegister',
     component:LoginRegister
   },{
