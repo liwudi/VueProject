@@ -4,6 +4,7 @@ import Router from 'vue-router'
 //page
 import Main from '../views/main/Main'
 import GoShoping from '../views/main/goShoping/GoShoping'
+import Classify from '../views/main/goShoping/classify/Classify';
 import ShopingCar from '../views/main/shopingCar/ShopingCar'
 import MyShop from '../views/main/myShop/MyShop'
 import ShopName from '../views/main/myShop/shopName/ShopName'
@@ -64,6 +65,10 @@ const routes = [
   },{
     path: '/getcode',
     component: GetCode
+  },{
+    path: '/classify/:id',
+    component: Classify,
+    props: true
   },{
     path: '*',
     redirect: '/loginRegister'

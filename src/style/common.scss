@@ -18,6 +18,9 @@ html,body,p,ul,li{
 .flexCol{
   flex-direction: column;
 }
+.flexwrap{
+  flex-wrap: wrap;
+}
 .flex1{
   flex: 1;
 }
@@ -122,6 +125,9 @@ html,body,p,ul,li{
 .height200{
     height: 200px;
 }
+.width60{
+  width: 60px;
+}
 
 // 边距
 .margin-top20{
@@ -167,4 +173,7 @@ html,body,p,ul,li{
 //font定制
 .font20{
   font-size: 20px;
+}
+.font14{
+  font-size: 14px;
 }
