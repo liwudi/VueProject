@@ -2,8 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 //page
-const Main = r => require.ensure([], () => r(require('../views/main/Main')))
-//import Main from '../views/main/Main';
+//const Main = r => require.ensure([], () => r(require('../views/main/Main')))
+import Main from '../views/main/Main';
 //const Main = () => import(/* webpackChunkName: "Main-page" */ '../views/main/Main');
 
 import GoShoping from '../views/main/goShoping/GoShoping'
@@ -78,5 +78,8 @@ const routes = [
   }
 ]
 export default new Router({
-  routes: routes
+  routes: routes,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
